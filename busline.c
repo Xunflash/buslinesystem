@@ -32,7 +32,7 @@ struct Lines                               //创建线路结构体
     int endnum;
     char liname[20];
     char endname[20];
-    struct Stations sta[500];
+    Stations sta[500];
 } line[100];
 /*---------------------------------------------函数区------------------------------------------------*/
 void back(){
@@ -180,7 +180,7 @@ void deletestation(){
             printf("\n\t\t\t\t\t\t  确认要删除该站点吗?(Y/N)");
             scanf("%s",&cin);
             if(*cin=='y'||*cin=='Y'){
-                for(int p=i;p<m;p++){
+                for(int p=i;p<499;p++){
                     if(station[p+1].num>1)
                     station[p+1].num--;
                     station[p]=station[p+1];
@@ -472,7 +472,7 @@ void changeline(){
                             continue;
                         }
                         else{
-                            for(int q=499;q>=cin2;q--){
+                            for(int q=m;q>=cin2;q--){
                                 line[i].sta[q+1].num=line[i].sta[q].num;
                                 strcpy(line[i].sta[q+1].stname,line[i].sta[q].stname);
                             }
