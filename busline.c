@@ -180,7 +180,7 @@ void deletestation(){
             printf("\n\t\t\t\t\t\t  确认要删除该站点吗?(Y/N)");
             scanf("%s",&cin);
             if(*cin=='y'||*cin=='Y'){
-                for(int p=i;p<499;p++){
+                for(int p=i;p<m;p++){
                     if(station[p+1].num>1)
                     station[p+1].num--;
                     station[p]=station[p+1];
